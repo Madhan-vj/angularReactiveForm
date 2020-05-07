@@ -1,1 +1,24 @@
-<p>formlist works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col" sortable="true">Gender</th>
+      <th scope="col">UserName</th>
+      <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of articles; index as i">
+          <th scope="row">{{data.id}}</th>
+          <td>{{ data.name }}</td>
+          <td>{{ data.email }}</td>
+          <td>{{ data.Gender }}</td>
+          <td>{{ data.username }}</td>
+          <td><button type="button"(click)="detail(data)">view</button>
+            <button class="btn btn-outline-primary mb-2 mr-2" (click)="edit(data,i)">Edit</button>
+        </td>
+        </tr>
+      </tbody>
+  </table>
